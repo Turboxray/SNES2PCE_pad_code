@@ -1,0 +1,40 @@
+
+
+SNES Port 1:
+
+     ..--------------------- ----------------------------..
+    |  <7>     <6>     <5>  |   <4>    <3>     <2>     <1> |
+     ``--------------------- ----------------------------``
+
+    Pin 1:	+5v         ->      PCE Controller Port 1:   +5v
+    Pin 2:	clock       ->      PCE Controller Port 1:  "CLR"
+    Pin 3:	latch       ->      PCE Controller Port 1:  "SEL"
+    Pin 4:	data        ->      PCE Controller Port 1:  "D0" (input line)
+    Pin 5:  N/A
+    Pin 6:  N/A
+    Pin 7:	ground      ->      PCE Controller Port 1:   Ground
+
+
+SNES port 2:
+
+     ..----------------------------- ---------------------..
+    |  <1>     <2>     <3>     <4>  |  <5>     <6>     <7>  |
+     ``----------------------------- ---------------------``
+
+    Pin 1:	+5v         ->      PCE Controller Port 1:  +5v
+    Pin 2:	clock       ->      PCE Controller Port 1:  "CLR"
+    Pin 3:	latch       ->      PCE Controller Port 1:  "SEL"
+    Pin 4:	data        ->      PCE Controller Port 1:  "D1" (input line)
+    Pin 5:  N/A
+    Pin 6:  N/A
+    Pin 7:	ground      ->      PCE Controller Port 1:   Ground
+
+
+  NOTE
+  ====
+    
+        The PCE controller code drives both SNES controllers (clock and latch).
+        They can share the same lines. The only that neesd to be separate is D0 and D1.
+        Thus both SNES controllers are read into a single PCE port. Technically you
+        could read up to 4 SNES controllers on a single PCE Port.
+
